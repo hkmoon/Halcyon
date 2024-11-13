@@ -64,7 +64,7 @@ public class ConsolePanel extends ScrollPane implements TextAppender
 
   /**
    * Appends text.
-   * 
+   *
    * @param pStringToAppend
    *          the string to append
    */
@@ -91,7 +91,7 @@ public class ConsolePanel extends ScrollPane implements TextAppender
   {
     mLastUpdate = System.currentTimeMillis();
 
-    Platform.runLater(() -> {
+//    Platform.runLater(() -> {
 
       if (mReentrantLock.tryLock())
       {
@@ -119,7 +119,7 @@ public class ConsolePanel extends ScrollPane implements TextAppender
           mReentrantLock.unlock();
         }
       }
-    });
+//    });
   }
 
   /**
@@ -127,9 +127,9 @@ public class ConsolePanel extends ScrollPane implements TextAppender
    */
   public void clearText()
   {
-    Platform.runLater(() -> {
+//    Platform.runLater(() -> {
       mTextArea.clear();
-    });
+//    });
   }
 
 }
